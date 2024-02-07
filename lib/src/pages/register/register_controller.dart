@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 //import 'package:image_picker/image_picker.dart';
 //import '../../models/user.dart';
-//import '../../providers/users_providers.dart';
+import '../../models/user.dart';
+import '../../providers/users_providers.dart';
 //
 class RegisterController extends GetxController {
 
@@ -14,7 +15,7 @@ class RegisterController extends GetxController {
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
 
-  //UsersProvider usersProvider = UsersProvider();
+  UsersProvider usersProvider = UsersProvider();
 
   //ImagePicker picker = ImagePicker();
   //File? imageFile;
@@ -35,6 +36,19 @@ class RegisterController extends GetxController {
     print('Password ${password}');
 
     if (isValidForm(email, name, lastname, phone, password, confirmPassword)) {
+
+      User user = User(
+          id: '',
+          email: email,
+          name: name,
+          lastname: lastname,
+          phone: phone,
+          image: '',
+          password: password
+      );
+
+      Response response = await usersProvider.create(user);
+      print('RESPONSE: ${response.body}');
       Get.snackbar('Formulario Válido', 'Enviar a HTTP');
     }
   }
