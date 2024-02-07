@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-//import 'package:udemy_flutter_delivery/src/pages/register/register_controller.dart';
+import 'package:udemy_flutter_delivery/src/pages/register/register_controller.dart';
 
 
 class RegisterPage extends StatelessWidget {
 
- // RegisterController con = Get.put(RegisterController());
+ RegisterController con = Get.put(RegisterController());
 
   @override
   Widget build(BuildContext context) {
@@ -113,7 +113,7 @@ class RegisterPage extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 40),
       child: TextField(
-        //controller: con.emailController,
+        controller: con.emailController,
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
             hintText: 'Correo electronico',
@@ -127,7 +127,7 @@ class RegisterPage extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 40),
       child: TextField(
-        //controller: con.nameController,
+        controller: con.nameController,
         keyboardType: TextInputType.text,
         decoration: InputDecoration(
             hintText: 'Nombre',
@@ -141,7 +141,7 @@ class RegisterPage extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 40),
       child: TextField(
-        //controller: con.lastnameController,
+        controller: con.lastnameController,
         keyboardType: TextInputType.text,
         decoration: InputDecoration(
             hintText: 'Apellido',
@@ -155,7 +155,7 @@ class RegisterPage extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 40),
       child: TextField(
-        //controller: con.phoneController,
+        controller: con.phoneController,
         keyboardType: TextInputType.phone,
         decoration: InputDecoration(
             hintText: 'Telefono',
@@ -169,7 +169,7 @@ class RegisterPage extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 40),
       child: TextField(
-        //controller: con.passwordController,
+        controller: con.passwordController,
         keyboardType: TextInputType.text,
         obscureText: true,
         decoration: InputDecoration(
@@ -184,7 +184,7 @@ class RegisterPage extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 40),
       child: TextField(
-        //controller: con.confirmPasswordController,
+        controller: con.confirmPasswordController,
         keyboardType: TextInputType.text,
         obscureText: true,
         decoration: InputDecoration(
@@ -200,8 +200,7 @@ class RegisterPage extends StatelessWidget {
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 40, vertical: 25),
       child: ElevatedButton(
-          //onPressed: () => con.register(),
-          onPressed: () {},
+          onPressed: () => con.register(),
           style: ElevatedButton.styleFrom(
               padding: EdgeInsets.symmetric(vertical: 15)
           ),

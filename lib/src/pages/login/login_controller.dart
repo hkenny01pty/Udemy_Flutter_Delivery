@@ -15,28 +15,28 @@ class LoginController extends GetxController {
     Get.toNamed('/register');
   }
 
-  //void login() async{
-  //  String email = emailController.text.trim();
-  //  String password = passwordController.text.trim();
- //
-  //  print('Email ${email}');
-  //  print('Password ${password}');
- //
-  //  if (isValidForm(email, password)) {
- //
-  //    ResponseApi responseApi = await usersProvider.login(email, password);
-  //    print('Response Api: ${responseApi.toJson()}');
- //
-  //    if (responseApi.success == true) {
-  //      GetStorage().write('user', responseApi.data);
-  //      goToHomePage();
-  //      //Get.snackbar('Login exitoso',  responseApi.message ?? '');
-  //    }
-  //    else {
-  //      Get.snackbar('Login fallido', responseApi.message ?? '');
-  //    }
-  //  }
-  //}
+  void login() async{
+    String email = emailController.text.trim();
+    String password = passwordController.text.trim();
+
+    print('Email ${email}');
+    print('Password ${password}');
+
+//f (isValidForm(email, password)) {
+// ResponseApi responseApi = await usersProvider.login(email, password);
+// print('Response Api: ${responseApi.toJson()}');
+//
+// if (responseApi.success == true) {
+//   GetStorage().write('user', responseApi.data);
+//   goToHomePage();
+//   //Get.snackbar('Login exitoso',  responseApi.message ?? '');
+// }
+// else {
+//   Get.snackbar('Login fallido', responseApi.message ?? '');
+// }
+//
+
+  }
 
   void goToHomePage() {
     //Get.toNamed('/home');

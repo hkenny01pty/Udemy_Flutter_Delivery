@@ -92,8 +92,7 @@ class LoginPage extends StatelessWidget {
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 60, vertical: 30),
       child: ElevatedButton(
-        //onPressed: () => con.login() ,
-        onPressed: () {} ,
+        onPressed: () => con.login() ,
         style: ElevatedButton.styleFrom(
             padding: EdgeInsets.symmetric(vertical: 15)
         ),
@@ -114,7 +113,7 @@ class LoginPage extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 40),
       child: TextField(
-        //controller: con.emailController,
+        controller: con.emailController,
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
             hintText: 'Correo Electrónico',
@@ -129,7 +128,7 @@ class LoginPage extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 40),
       child: TextField(
-       // controller: con.passwordController,
+        controller: con.passwordController,
         keyboardType: TextInputType.text,
         obscureText: true,
         decoration: InputDecoration(
