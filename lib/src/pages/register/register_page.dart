@@ -80,14 +80,14 @@ class RegisterPage extends StatelessWidget {
   Widget _imageUser(BuildContext context) {
     return SafeArea(
       child: Container(
-        margin: EdgeInsets.only(top: 15),
+        margin: EdgeInsets.only(top: 30),
         alignment: Alignment.topCenter,
         child: GestureDetector(
           //onTap: () => con.showAlertDialog(context),
           onTap: () {},
             child: CircleAvatar(
                 backgroundImage:  AssetImage('assets/img/user_profile.png') as ImageProvider,
-                radius: 70,
+                radius: 75,
                 backgroundColor: Colors.white,
               ),
             )

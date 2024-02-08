@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:udemy_flutter_delivery/src/models/user.dart';
 import '../environment/environment.dart';
-//import '../models/response_api.dart';
+import '../models/response_api.dart';
 
 
 class UsersProvider extends GetConnect {
@@ -17,28 +17,28 @@ class UsersProvider extends GetConnect {
         }
     );
     return response;
-  } 
+  }
 
 
-//  Future<ResponseApi> login(String email, String password) async {
-//    Response response = await post(
-//        '$url/findByEmail',
-//        //'$url/login',
-//        {
-//          'email': email,
-//          'password': password
-//        },
-//        headers: {
-//          'Content-Type': 'application/json'
-//        }
-//    );
+  Future<ResponseApi> login(String email, String password) async {
+    Response response = await post(
+        '$url/findByEmail',
+        //'$url/login',
+        {
+          'email': email,
+          'password': password
+        },
+        headers: {
+          'Content-Type': 'application/json'
+        }
+    );
 
-//    if(response.body == null){
-//      Get.snackbar('Error', 'No se puede ejecutar la peticion');
-//      return ResponseApi(success: false, message: '', data: null);
-//    }
-//    ResponseApi responseApi = ResponseApi.fromJson(response.body);
-//    return responseApi;
+    if(response.body == null){
+      Get.snackbar('Error', 'No se puede ejecutar la peticion');
+      return ResponseApi(success: false, message: '', data: null);
+    }
+    ResponseApi responseApi = ResponseApi.fromJson(response.body);
+    return responseApi;
 
     /*
     if(response.body == null){
@@ -60,3 +60,4 @@ class UsersProvider extends GetConnect {
   }
 
 
+}

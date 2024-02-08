@@ -1,15 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 //import 'package:get_storage/get_storage.dart';
-//import '../../models/response_api.dart';
-//import '../../providers/users_providers.dart';
+import '../../models/response_api.dart';
+import '../../providers/users_providers.dart';
 
 class LoginController extends GetxController {
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  //UsersProvider usersProvider = UsersProvider();
+  UsersProvider usersProvider = UsersProvider();
 
   void goToRegisterPage() {
     Get.toNamed('/register');
@@ -22,19 +22,19 @@ class LoginController extends GetxController {
     print('Email ${email}');
     print('Password ${password}');
 
-//f (isValidForm(email, password)) {
-// ResponseApi responseApi = await usersProvider.login(email, password);
-// print('Response Api: ${responseApi.toJson()}');
-//
-// if (responseApi.success == true) {
-//   GetStorage().write('user', responseApi.data);
-//   goToHomePage();
-//   //Get.snackbar('Login exitoso',  responseApi.message ?? '');
-// }
-// else {
-//   Get.snackbar('Login fallido', responseApi.message ?? '');
-// }
-//
+    if (isValidForm(email, password)) {
+      ResponseApi responseApi = await usersProvider.login(email, password);
+      print('Response Api: ${responseApi.toJson()}');
+
+      if (responseApi.success == true) {
+        //GetStorage().write('user', responseApi.data);
+        //goToHomePage();
+        Get.snackbar('Login exitoso',  responseApi.message ?? '');
+      }
+      else {
+        Get.snackbar('Login fallido', responseApi.message ?? '');
+      }
+    }
 
   }
 
